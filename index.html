@@ -45,6 +45,12 @@
   --gris:#44586A;
   --borde:#D8E6F2;
   --blanco:#FFFFFF;
+  /* Patrón de fondo: grilla diagonal de paneles, inspirada en una fachada
+     de cortina de vidrio (dos familias de líneas a 90° entre sí, en ángulo,
+     como el reflejo tomado desde abajo). Referencia de humor visual, no una
+     foto: además es el mismo producto que vende el negocio. */
+  --patron-claro: rgba(28,125,196,.055);
+  --patron-oscuro: rgba(111,195,240,.07);
   --radio:14px;
   --sombra:0 1px 2px rgba(14,27,38,.06), 0 8px 24px rgba(10,74,130,.07);
   --ancho:1120px;
@@ -53,7 +59,11 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--blanco);color:var(--tinta);
+  margin:0;color:var(--tinta);
+  background-color:var(--blanco);
+  background-image:
+    repeating-linear-gradient(52deg, var(--patron-claro) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(-38deg, var(--patron-claro) 0 1px, transparent 1px 96px);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
 }
@@ -69,7 +79,12 @@ ul{margin:0;padding:0;list-style:none}
 .sr-solo{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .contenedor{width:100%;max-width:var(--ancho);margin-inline:auto;padding-inline:20px}
 .seccion{padding:clamp(56px,8vw,104px) 0}
-.seccion--hielo{background:var(--hielo)}
+.seccion--hielo{
+  background-color:var(--hielo);
+  background-image:
+    repeating-linear-gradient(52deg, var(--patron-claro) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(-38deg, var(--patron-claro) 0 1px, transparent 1px 96px);
+}
 .seccion__intro{max-width:62ch;margin-bottom:clamp(28px,4vw,48px)}
 .seccion__intro p{color:var(--gris);font-size:1.05rem;margin:0}
 .eyebrow{
@@ -124,7 +139,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 @media (max-width:600px){.cabecera .btn--chico span{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--hielo) 0%,#fff 78%)}
+.hero{
+  position:relative;overflow:hidden;
+  background-image:
+    repeating-linear-gradient(52deg, var(--patron-claro) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(-38deg, var(--patron-claro) 0 1px, transparent 1px 96px),
+    linear-gradient(180deg,var(--hielo) 0%,#fff 78%);
+}
 .hero__grilla{
   display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(32px,5vw,64px);align-items:center;
   padding-block:clamp(44px,7vw,92px) clamp(44px,6vw,80px);
@@ -211,7 +232,13 @@ a.senal:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:v
 .faq__item div p:last-child{margin:0}
 
 /* ---------- Contacto ---------- */
-.contacto{background:var(--tinta);color:var(--hielo)}
+.contacto{
+  background-color:var(--tinta);
+  background-image:
+    repeating-linear-gradient(52deg, var(--patron-oscuro) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(-38deg, var(--patron-oscuro) 0 1px, transparent 1px 96px);
+  color:var(--hielo);
+}
 .contacto h2{color:#fff}
 .contacto .eyebrow{color:var(--celeste)}
 .contacto__grilla{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,60px);align-items:start}
@@ -232,7 +259,13 @@ a.senal:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:v
 @media (max-width:480px){.contacto__acciones .btn{width:100%}}
 
 /* ---------- Footer ---------- */
-.pie{background:#071620;color:#9FB4C4;font-size:.9rem;padding:26px 0;border-top:1px solid rgba(240,247,252,.1)}
+.pie{
+  background-color:#071620;
+  background-image:
+    repeating-linear-gradient(52deg, var(--patron-oscuro) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(-38deg, var(--patron-oscuro) 0 1px, transparent 1px 96px);
+  color:#9FB4C4;font-size:.9rem;padding:26px 0;border-top:1px solid rgba(240,247,252,.1);
+}
 .pie__fila{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between}
 .pie a{color:#C3D5E3;text-decoration:none;display:inline-block;padding:6px 2px}
 .pie a:hover{color:var(--celeste);text-decoration:underline}
