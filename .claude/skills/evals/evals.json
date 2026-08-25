@@ -1,0 +1,92 @@
+{
+ "skill_set": "front-end skills (6)",
+ "evals": [
+  {
+   "id": 0,
+   "name": "landing-precios-accesible",
+   "skill": "web-design-guidelines",
+   "prompt": "Necesito una página de precios para mi SaaS de gestión de turnos para peluquerías. Tres planes: Básico $12.000, Pro $28.000 y Estudio $55.000 por mes, cada uno con su lista de características y un botón para contratar. Que sea un solo archivo HTML con el CSS adentro, sin frameworks. Guardalo como precios.html",
+   "expected_output": "Un precios.html accesible y responsive: un solo h1, contraste AA, foco visible, sin scroll horizontal a 320px, prefers-reduced-motion respetado.",
+   "assertions": [
+    "El HTML tiene exactamente un <h1>",
+    "La jerarquía de encabezados no salta niveles (no hay h2 seguido de h4)",
+    "Todos los textos pasan contraste WCAG AA (4.5:1 normal, 3:1 grande)",
+    "Hay una regla de foco visible (:focus-visible o :focus con outline)",
+    "No hay scroll horizontal a 320px de ancho",
+    "Respeta prefers-reduced-motion",
+    "Los botones de contratar son <button> o <a>, no <div> clickeable",
+    "Los objetivos táctiles principales miden al menos 44px de alto"
+   ]
+  },
+  {
+   "id": 1,
+   "name": "react-estado-derivado",
+   "skill": "react-best-practices",
+   "prompt": "Hacé un componente React llamado ListaClientes que reciba por props un array de clientes y un clienteActivoId. Necesito un buscador que filtre por nombre, que muestre arriba cuántos resultados hay, y que cuando cambie clienteActivoId se limpie lo que haya escrito en el buscador. Guardalo como ListaClientes.jsx",
+   "expected_output": "El conteo y el filtrado se derivan en el render; el reset del buscador se hace con key o equivalente, no con un useEffect que llama a setState.",
+   "assertions": [
+    "El conteo de resultados se calcula en el render, no se guarda en useState",
+    "La lista filtrada se deriva en el render, no se sincroniza con useEffect",
+    "No hay ningún useEffect que llame a setState para un valor derivado de props o estado",
+    "El reset del buscador se resuelve con key, con ajuste durante el render, o sin efecto",
+    "Las keys de la lista usan un id estable, no el índice del array"
+   ]
+  },
+  {
+   "id": 2,
+   "name": "refactor-api-componente",
+   "skill": "composition-patterns",
+   "prompt": "Te paso un componente Card que ya tiene 13 props (está en Card.jsx). Ahora me piden dos cosas más: que algunas cards puedan mostrar un gráfico chico arriba del título, y que otras tengan dos botones en el pie en vez de uno. Refactorizá el componente para que aguante esto y lo que venga después. Guardá el resultado como Card.refactor.jsx",
+   "expected_output": "Una API basada en composición (children o componentes compuestos) en vez de seguir sumando props de configuración.",
+   "assertions": [
+    "El componente resultante acepta children o expone subcomponentes (Card.Header, Card.Footer o equivalente)",
+    "La cantidad de props del componente principal bajó respecto de las 13 originales",
+    "No se agregaron props booleanas nuevas del tipo showX/hasY para las funcionalidades pedidas",
+    "El gráfico y los dos botones se resuelven componiendo, sin props nuevas de render por zona",
+    "La explicación justifica por qué composición en vez de más configuración"
+   ]
+  },
+  {
+   "id": 3,
+   "name": "next-perfil-server-action",
+   "skill": "next-best-practices",
+   "prompt": "En mi app Next.js con App Router hacé la ruta /perfil/[id]. Tiene que mostrar los datos del usuario y sus últimos 5 pedidos (tengo dos funciones async separadas, getUsuario(id) y getPedidos(id)), y abajo un formulario para editar el nombre del usuario. Guardá los archivos en una carpeta perfil/",
+   "expected_output": "Los dos fetch en paralelo, 'use client' solo en el formulario, y la Server Action con verificación de sesión, validación de entrada y revalidación.",
+   "assertions": [
+    "getUsuario y getPedidos se piden en paralelo (Promise.all o equivalente), no en awaits secuenciales",
+    "'use client' no está en el page.tsx/page.jsx de la ruta, solo en el componente de formulario si hace falta",
+    "La Server Action verifica la sesión o autorización dentro de la propia action",
+    "La Server Action valida o parsea la entrada antes de escribir",
+    "Se revalida (revalidatePath/revalidateTag) después de la escritura"
+   ]
+  },
+  {
+   "id": 4,
+   "name": "galeria-view-transition",
+   "skill": "react-view-transitions",
+   "prompt": "Tengo una galería de fotos en React. Al hacer click en una miniatura se abre la foto en grande. Quiero que la miniatura se expanda hasta la foto grande, con esa sensación de app nativa. Guardalo como Galeria.jsx (y el CSS que haga falta)",
+   "expected_output": "view-transition-name único por foto, startViewTransition con detección de soporte, flushSync para que React aplique el cambio, y prefers-reduced-motion respetado.",
+   "assertions": [
+    "Usa document.startViewTransition",
+    "Detecta soporte antes de usar la API (feature detection) con un camino alternativo",
+    "El view-transition-name es único por foto, no compartido entre todas las miniaturas",
+    "Fuerza el cambio sincrónico de React con flushSync, o justifica explícitamente otro mecanismo",
+    "Incluye un bloque prefers-reduced-motion que desactiva la animación"
+   ]
+  },
+  {
+   "id": 5,
+   "name": "hero-arquitectura",
+   "skill": "taste",
+   "prompt": "Hero para la landing de un estudio de arquitectura chico en Rosario. Tres socias, hacen vivienda unifamiliar y refacciones. Un solo archivo HTML con el CSS adentro, guardalo como hero.html",
+   "expected_output": "Un hero con criterio: tipografía disciplinada, paleta contenida, sin los tics de plantilla generada. Es un caso subjetivo, se juzga mirándolo.",
+   "assertions": [
+    "No usa gradiente violeta a rosa como fondo o en el título",
+    "No usa emojis como íconos",
+    "Usa como máximo dos pesos tipográficos",
+    "El copy es específico del estudio y su rubro, no frases intercambiables tipo 'Elevamos tu espacio'",
+    "Los valores de espaciado siguen una escala coherente, no números arbitrarios"
+   ]
+  }
+ ]
+}

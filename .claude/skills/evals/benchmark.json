@@ -1,0 +1,622 @@
+{
+ "metadata": {
+  "skill_name": "6 skills de front-end (una eval por skill)",
+  "skill_path": "<path/to/skill>",
+  "executor_model": "claude-opus-5",
+  "analyzer_model": "<model-name>",
+  "timestamp": "2026-08-25T20:58:07Z",
+  "evals_run": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "runs_per_configuration": 1
+ },
+ "runs": [
+  {
+   "eval_id": 0,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "time_seconds": 180.8,
+    "tokens": 51882,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "El HTML tiene exactamente un <h1>",
+     "passed": true,
+     "evidence": "Chromium: document.querySelectorAll('h1').length == 1"
+    },
+    {
+     "text": "La jerarquía de encabezados no salta niveles",
+     "passed": true,
+     "evidence": "Recorrido de h1..h6: ningún salto mayor a 1"
+    },
+    {
+     "text": "Todos los textos pasan contraste WCAG AA",
+     "passed": true,
+     "evidence": "Contraste computado sobre todos los nodos de texto: 0 fallas"
+    },
+    {
+     "text": "Hay una regla de foco visible",
+     "passed": true,
+     "evidence": ":focus-visible presente en el CSS"
+    },
+    {
+     "text": "No hay scroll horizontal a 320px",
+     "passed": true,
+     "evidence": "scrollWidth == clientWidth a 320px"
+    },
+    {
+     "text": "Respeta prefers-reduced-motion",
+     "passed": true,
+     "evidence": "2 bloques @media prefers-reduced-motion"
+    },
+    {
+     "text": "Los CTA son <button> o <a>",
+     "passed": true,
+     "evidence": "0 div/span con onclick; los CTA son <a href>"
+    },
+    {
+     "text": "Objetivos táctiles de al menos 44px",
+     "passed": true,
+     "evidence": "Los 3 CTA miden 53px de alto"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 1,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 30.5,
+    "tokens": 37862,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "El conteo se calcula en el render",
+     "passed": true,
+     "evidence": "const cantidad = filtrados.length — no está en useState"
+    },
+    {
+     "text": "La lista filtrada se deriva en el render",
+     "passed": true,
+     "evidence": "Derivada; único useState es 'busqueda'"
+    },
+    {
+     "text": "Ningún useEffect llama a setState para valor derivado",
+     "passed": true,
+     "evidence": "0 useEffect en el archivo"
+    },
+    {
+     "text": "El reset se resuelve sin efecto",
+     "passed": true,
+     "evidence": "key en componente interno; no hay useEffect"
+    },
+    {
+     "text": "Keys con id estable",
+     "passed": true,
+     "evidence": "key={cliente.id}; sin key={index}"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 81.3,
+    "tokens": 41588,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Acepta children o expone subcomponentes",
+     "passed": true,
+     "evidence": "Card.Media/.Header/.Titles/.Title/.Subtitle/.Badge/.Body/.Footer/.Actions"
+    },
+    {
+     "text": "Bajó la cantidad de props",
+     "passed": true,
+     "evidence": "De 13 a 4 en el componente raíz"
+    },
+    {
+     "text": "No agregó props booleanas nuevas",
+     "passed": true,
+     "evidence": "showX/isY solo aparecen en comentarios, no en código"
+    },
+    {
+     "text": "Gráfico y dos botones se resuelven componiendo",
+     "passed": true,
+     "evidence": "Children reordenados; sin props nuevas"
+    },
+    {
+     "text": "Justifica composición sobre configuración",
+     "passed": true,
+     "evidence": "Bloque final de decisiones de API"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 3,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 113.3,
+    "tokens": 45156,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Los dos fetch en paralelo, sin cascada",
+     "passed": true,
+     "evidence": "Las dos promesas arrancan juntas (l.32-33) y se await por separado; pedidos se transmite con Suspense"
+    },
+    {
+     "text": "'use client' no está en el page",
+     "passed": true,
+     "evidence": "Solo en form-editar-nombre.tsx"
+    },
+    {
+     "text": "La Server Action verifica sesión/autorización adentro",
+     "passed": true,
+     "evidence": "await obtenerSesion() + sesion.usuarioId !== id, en código real"
+    },
+    {
+     "text": "La Server Action valida la entrada",
+     "passed": true,
+     "evidence": "Esquema zod"
+    },
+    {
+     "text": "Revalida después de escribir",
+     "passed": true,
+     "evidence": "revalidateTag"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 4,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 132.9,
+    "tokens": 45946,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Usa document.startViewTransition",
+     "passed": true,
+     "evidence": "Presente en código real"
+    },
+    {
+     "text": "Detecta soporte con camino alternativo",
+     "passed": true,
+     "evidence": "Fallback a cambio instantáneo si no hay soporte"
+    },
+    {
+     "text": "El view-transition-name no se comparte entre dos elementos a la vez",
+     "passed": true,
+     "evidence": "Nombre único que rota: lo lleva la miniatura elegida o la foto grande, nunca ambas"
+    },
+    {
+     "text": "Fuerza el cambio sincrónico con flushSync",
+     "passed": true,
+     "evidence": "flushSync presente"
+    },
+    {
+     "text": "Incluye prefers-reduced-motion",
+     "passed": true,
+     "evidence": "Bloque presente"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 5,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 276.4,
+    "tokens": 55783,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Sin gradiente violeta a rosa",
+     "passed": true,
+     "evidence": "0 coincidencias"
+    },
+    {
+     "text": "Sin emojis como íconos",
+     "passed": true,
+     "evidence": "0 emojis en el archivo"
+    },
+    {
+     "text": "Como máximo dos pesos tipográficos",
+     "passed": true,
+     "evidence": "font-weight 400 y 600"
+    },
+    {
+     "text": "Copy específico del estudio",
+     "passed": true,
+     "evidence": "'Proyectamos casas para lotes de 8,66 metros', Echesortu/Pichincha, matrícula CAPSF, nombres de las tres socias"
+    },
+    {
+     "text": "Espaciado con escala coherente",
+     "passed": true,
+     "evidence": "Escala declarada en variables, sin números arbitrarios en el layout"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 0,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "time_seconds": 62.5,
+    "tokens": 38070,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "El HTML tiene exactamente un <h1>",
+     "passed": true,
+     "evidence": "Chromium: 1 h1"
+    },
+    {
+     "text": "La jerarquía de encabezados no salta niveles",
+     "passed": true,
+     "evidence": "Ningún salto detectado"
+    },
+    {
+     "text": "Todos los textos pasan contraste WCAG AA",
+     "passed": true,
+     "evidence": "0 fallas de contraste computado"
+    },
+    {
+     "text": "Hay una regla de foco visible",
+     "passed": true,
+     "evidence": ":focus-visible presente (2 apariciones)"
+    },
+    {
+     "text": "No hay scroll horizontal a 320px",
+     "passed": true,
+     "evidence": "scrollWidth == clientWidth a 320px"
+    },
+    {
+     "text": "Respeta prefers-reduced-motion",
+     "passed": true,
+     "evidence": "1 bloque @media prefers-reduced-motion"
+    },
+    {
+     "text": "Los CTA son <button> o <a>",
+     "passed": true,
+     "evidence": "0 div clickeable; 3 CTA como <a>"
+    },
+    {
+     "text": "Objetivos táctiles de al menos 44px",
+     "passed": true,
+     "evidence": "Los 3 CTA miden 53px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 1,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 40.8,
+    "tokens": 35790,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "El conteo se calcula en el render",
+     "passed": true,
+     "evidence": "const cantidad = clientesFiltrados.length"
+    },
+    {
+     "text": "La lista filtrada se deriva en el render",
+     "passed": true,
+     "evidence": "useMemo (derivación, no estado duplicado)"
+    },
+    {
+     "text": "Ningún useEffect llama a setState para valor derivado",
+     "passed": true,
+     "evidence": "0 useEffect en el archivo"
+    },
+    {
+     "text": "El reset se resuelve sin efecto",
+     "passed": true,
+     "evidence": "Ajuste durante el render guardando ultimoClienteId"
+    },
+    {
+     "text": "Keys con id estable",
+     "passed": true,
+     "evidence": "Sin key={index}"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 70.6,
+    "tokens": 38244,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Acepta children o expone subcomponentes",
+     "passed": true,
+     "evidence": "Card.Media/.Visual/.Header/.Title/.Subtitle/.Body/.Footer/.Actions/.Badge"
+    },
+    {
+     "text": "Bajó la cantidad de props",
+     "passed": true,
+     "evidence": "De 13 a 4 en el componente raíz"
+    },
+    {
+     "text": "No agregó props booleanas nuevas",
+     "passed": true,
+     "evidence": "showX/isY solo en comentarios"
+    },
+    {
+     "text": "Gráfico y dos botones se resuelven componiendo",
+     "passed": true,
+     "evidence": "Card.Visual y Card.Actions con N children"
+    },
+    {
+     "text": "Justifica composición sobre configuración",
+     "passed": true,
+     "evidence": "Decisiones de API comentadas al final"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 3,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.8,
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "time_seconds": 65.2,
+    "tokens": 37368,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Los dos fetch en paralelo, sin cascada",
+     "passed": true,
+     "evidence": "Promise.all([getUsuario, getPedidos])"
+    },
+    {
+     "text": "'use client' no está en el page",
+     "passed": true,
+     "evidence": "Solo en editar-nombre-form.tsx"
+    },
+    {
+     "text": "La Server Action verifica sesión/autorización adentro",
+     "passed": false,
+     "evidence": "El chequeo quedó como comentario: '// TODO: verificar acá que la sesión...' y '// if (sesion?.userId !== id)'. No hay código de autorización ejecutable."
+    },
+    {
+     "text": "La Server Action valida la entrada",
+     "passed": true,
+     "evidence": "Chequeos de largo: nombre.length < 2 y > 80, más id no vacío"
+    },
+    {
+     "text": "Revalida después de escribir",
+     "passed": true,
+     "evidence": "revalidatePath(`/perfil/${id}`)"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 4,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 162.7,
+    "tokens": 43966,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Usa document.startViewTransition",
+     "passed": true,
+     "evidence": "Presente en código real"
+    },
+    {
+     "text": "Detecta soporte con camino alternativo",
+     "passed": true,
+     "evidence": "Fallback sin animación"
+    },
+    {
+     "text": "El view-transition-name no se comparte entre dos elementos a la vez",
+     "passed": true,
+     "evidence": "Nombre 'foto-activa' aplicado antes/después para no duplicar"
+    },
+    {
+     "text": "Fuerza el cambio sincrónico con flushSync",
+     "passed": true,
+     "evidence": "flushSync presente"
+    },
+    {
+     "text": "Incluye prefers-reduced-motion",
+     "passed": true,
+     "evidence": "Bloque presente"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 5,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "time_seconds": 100.0,
+    "tokens": 40478,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Sin gradiente violeta a rosa",
+     "passed": true,
+     "evidence": "0 coincidencias"
+    },
+    {
+     "text": "Sin emojis como íconos",
+     "passed": true,
+     "evidence": "0 emojis"
+    },
+    {
+     "text": "Como máximo dos pesos tipográficos",
+     "passed": true,
+     "evidence": "Un solo font-weight declarado (400)"
+    },
+    {
+     "text": "Copy específico del estudio",
+     "passed": true,
+     "evidence": "Menciona Rosario, vivienda unifamiliar y refacciones; el titular 'Casas pensadas para cómo vivís realmente' es más blando pero no genérico"
+    },
+    {
+     "text": "Espaciado con escala coherente",
+     "passed": true,
+     "evidence": "Espaciados en rem, sin px arbitrarios"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "run_summary": {
+  "with_skill": {
+   "pass_rate": {
+    "mean": 1.0,
+    "stddev": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "time_seconds": {
+    "mean": 135.8667,
+    "stddev": 85.2834,
+    "min": 30.5,
+    "max": 276.4
+   },
+   "tokens": {
+    "mean": 46369.5,
+    "stddev": 6571.0558,
+    "min": 37862,
+    "max": 55783
+   }
+  },
+  "without_skill": {
+   "pass_rate": {
+    "mean": 0.9667,
+    "stddev": 0.0816,
+    "min": 0.8,
+    "max": 1.0
+   },
+   "time_seconds": {
+    "mean": 83.6333,
+    "stddev": 43.1518,
+    "min": 40.8,
+    "max": 162.7
+   },
+   "tokens": {
+    "mean": 38986.0,
+    "stddev": 2872.2265,
+    "min": 35790,
+    "max": 43966
+   }
+  },
+  "delta": {
+   "pass_rate": "+0.03",
+   "time_seconds": "+52.2",
+   "tokens": "+7384"
+  }
+ },
+ "notes": [
+  "1 sola corrida por eval y configuración: los ± del resumen son la dispersión ENTRE evals distintas, no la varianza de repetir la misma. No hay datos de flakiness.",
+  "32 de 33 assertions pasan en las DOS configuraciones: no discriminan. Sirven como red de seguridad (detectan si una skill empeora algo), no como medida del valor de la skill.",
+  "La única assertion que discrimina es la de seguridad en eval-3: sin la skill, la Server Action dejó la autorización como comentario '// TODO: verificar acá que la sesión...' mientras el resto del código (validación de largo, revalidación) sí se implementó. El modelo base conocía el principio y no lo ejecutó.",
+  "Costo de la skill: +52s (+62%) y +7.384 tokens (+19%) por tarea. En eval-5 (taste) el costo fue el más alto: 276s vs 100s.",
+  "Las evals 0, 1, 2, 4 y 5 dan delta cero. En estas tareas Opus sin skill ya aplica las prácticas: derivó estado sin useEffect, refactorizó a componentes compuestos bajando de 13 props a 4, y usó flushSync con feature detection por su cuenta.",
+  "Las assertions de `taste` (eval-5) son proxies groseros de algo subjetivo: medir 'sin emojis' y 'dos pesos tipográficos' no mide si el hero se ve bien. Esa eval hay que juzgarla mirándola.",
+  "Dos falsos positivos del verificador quedaron corregidos durante la corrida: process.argv[1] en Node cargaba el propio script como página, y el parser de color leía color(srgb 0.98 ...) en escala 0-255 y reportaba 5 fallas de contraste inexistentes en el run con skill."
+ ]
+}
