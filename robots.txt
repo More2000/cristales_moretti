@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PLACEHOLDER: actualizar con el dominio definitivo
+Sitemap: https://cristalesmonetti.com.ar/sitemap.xml
