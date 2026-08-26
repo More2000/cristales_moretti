@@ -1,5 +1,29 @@
 User-agent: *
 Allow: /
 
+# Crawlers de motores de respuesta con IA — acceso explícito para AEO
+# (ver .claude/skills/ai-seo). Esta lista cambia con el tiempo; revisarla
+# cada tanto contra la vigente de cada proveedor.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # PLACEHOLDER: actualizar con el dominio definitivo
 Sitemap: https://cristalesmonetti.com.ar/sitemap.xml

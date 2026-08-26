@@ -1,8 +1,10 @@
 # Skills
 
-Seis skills para Claude Code, equivalentes en espíritu a las que ofrece v0
+Ocho skills para Claude Code. Seis equivalentes en espíritu a las que ofrece v0
 (`vercel-react-best-practices`, `web-design-guidelines`, `vercel-composition-patterns`,
-`next-best-practices`, `vercel-react-view-transitions`) más una skill de criterio estético.
+`next-best-practices`, `vercel-react-view-transitions`) más una skill de criterio estético,
+y dos más de SEO/AEO (`seo-audit` y `ai-seo`, el par que v0 llama `seo-audit` y `ai-seo`
+también).
 
 **No son las skills de Vercel.** Esas son de v0 y no están publicadas en el catálogo de
 Claude — no hay forma de importarlas. Estas están escritas de cero sobre las mismas prácticas.
@@ -15,9 +17,13 @@ Claude — no hay forma de importarlas. Estas están escritas de cero sobre las 
 | `composition-patterns` | APIs de componentes: `children` sobre configuración, componentes compuestos, inversión de control, borde server/client. |
 | `next-best-practices` | App Router: servidor por defecto, cascadas de datos, caché y revalidación, Server Actions seguras, metadata. |
 | `react-view-transitions` | View Transitions API: `view-transition-name`, `flushSync` en React, transiciones entre documentos, accesibilidad. |
+| `seo-audit` | SEO clásico verificable: títulos, meta description, canonical, sitemap.xml, robots.txt, datos estructurados. |
+| `ai-seo` | AEO — que te encuentre ChatGPT/Perplexity/Copilot, no solo Google: crawlers de IA, llms.txt, contenido citable. |
 
 `taste` y `web-design-guidelines` se complementan y no se pisan: la primera es el juicio
-(¿se ve bien?), la segunda es la correctitud (¿pasa el test?).
+(¿se ve bien?), la segunda es la correctitud (¿pasa el test?). Lo mismo pasa con el otro
+par: `seo-audit` es el buscador de toda la vida, `ai-seo` es lo que ese SEO clásico no
+cubre — acceso de los crawlers de IA, contenido en formato citable, `llms.txt`.
 
 ## Alcance
 
