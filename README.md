@@ -1,6 +1,6 @@
 # Landing — Cristales Monetti S.R.L.
 
-Landing de una sola página para Cristales Monetti S.R.L. (Bv. España 600, Villa María,
+Landing de una sola página para Cristales Monetti S.R.L. (Paso de los Libres 1921, Villa María,
 Córdoba). HTML estático, sin build ni dependencias: se sube tal cual a cualquier hosting.
 
 ```
@@ -34,7 +34,7 @@ Están marcados en la página con el cartel **“Falta confirmar”** y con come
 
 ## Datos usados (confirmados)
 
-Bv. España 600, Villa María, Córdoba · (0353) 453-3054 · [@cristalesmonetti](https://www.instagram.com/cristalesmonetti/)
+Paso de los Libres 1921, Villa María, Córdoba · (0353) 453-3054 · [@cristalesmonetti](https://www.instagram.com/cristalesmonetti/)
 · Distribuidor oficial VASA · más de 70 años de trayectoria · venta mayorista y minorista.
 
 No se incluyeron testimonios: todavía no hay ninguno recopilado, así que la prueba social
