@@ -189,12 +189,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 /* ---------- Servicios ---------- */
 .servicios{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
 .servicio{
-  background:var(--blanco);border:1px solid var(--borde);border-radius:var(--radio);
+  background:var(--blanco);border:1px solid var(--borde);border-top:3px solid var(--azul-medio);border-radius:var(--radio);
   padding:26px 24px;transition:transform var(--t),box-shadow var(--t),border-color var(--t);
 }
 .servicio:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--azul-medio)}
 .servicio__icono{
-  width:44px;height:44px;border-radius:12px;background:var(--hielo);color:var(--azul);
+  width:44px;height:44px;border-radius:12px;background:var(--azul);color:#fff;
   display:grid;place-items:center;margin-bottom:16px;
 }
 .servicio p{color:var(--gris);font-size:.97rem;margin:0}
